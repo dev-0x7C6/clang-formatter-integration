@@ -8,7 +8,8 @@ if [ ! -x "$formatter" ]; then
 fi
 
 $formatter --diff | grep "no modified files to format" && exit 0
-$formatter --diff | grep "dasdsds" && exit 0
+$formatter --diff | grep "clang-format did not modify any files" && exit 0
 
 $formatter -f
+echo -e "\e[95mclang-format: \e[93msome files has been changed.\e[0m"
 exit 1
