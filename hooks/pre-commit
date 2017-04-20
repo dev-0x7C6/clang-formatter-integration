@@ -1,0 +1,14 @@
+#!/bin/bash
+
+formatter="$(git rev-parse --show-toplevel)/formatter/python/git-clang-format"
+
+if [ ! -x "$formatter" ]; then
+	echo "unable to find formatter ($formatter)"
+	exit 1
+fi
+
+$formatter --diff | grep "no modified files to format" && exit 0
+$formatter --diff | grep "dasdsds" && exit 0
+
+$formatter -f
+exit 1

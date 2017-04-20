@@ -1,0 +1,4 @@
+#!/bin/bash
+
+git config --local clangFormat.style file
+ln -sf ../../formatter/hooks/pre-commit .git/hooks/
