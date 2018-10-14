@@ -1,8 +1,8 @@
 #!/bin/bash
 
-formatter="$(git rev-parse --show-toplevel)/formatter/python/git-clang-format"
+formatter="git-clang-format"
 
-if [ ! -x "$formatter" ]; then
+if ( test -e ${formatter} ); then
 	echo "unable to find formatter ($formatter)"
 	exit 1
 fi
